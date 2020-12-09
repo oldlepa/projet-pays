@@ -18,9 +18,9 @@ function App() {
       <Route path="/admin" component={NavBar2} />*/}
       <NavBar />
       <Switch>
-        <Route path="/gh-pages-url/" exact render={Accueil} />
-        <Route path="/gh-pages-url/pays" exact component={PaysManager} />
-        <Route path="/gh-pages-url/pays/:id" exact render={(props) => <UnPays {...props}/>} />
+        <Route path={process.env.PUBLIC_URL + '/'} exact render={Accueil} />
+        <Route path={process.env.PUBLIC_URL + '/pays'} exact component={PaysManager} />
+        <Route path={process.env.PUBLIC_URL + '/pays/:id'} exact render={(props) => <UnPays {...props}/>} />
         <Route render={() => <Erreur><Erreur404 /></Erreur>} />
         {/* <Route path="/admin" exact component={() => <h2>Page Admin</h2>} /> */}
       </Switch>
