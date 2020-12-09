@@ -9,9 +9,11 @@ import Erreur404 from './components/Erreur/erreur404';
 import Accueil from './components/Accueil/Accueil';
 import './App.css';
 
-function App() {
+function App(props) {
+  const { match } = props;
+  console.log(props);
   return (
-    <BrowserRouter basename = "/" forceRefresh={true}>
+    <BrowserRouter forceRefresh={true}>
       {/* <Link to="/">Accueil</Link>
       <Link to="/pays">Les pays</Link> 
       <Route path="/pays" component={NavBar} />
