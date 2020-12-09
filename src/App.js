@@ -11,16 +11,16 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename = "/" forceRefresh={true}>
       {/* <Link to="/">Accueil</Link>
       <Link to="/pays">Les pays</Link> 
       <Route path="/pays" component={NavBar} />
       <Route path="/admin" component={NavBar2} />*/}
       <NavBar />
       <Switch>
-        <Route path={process.env.PUBLIC_URL + '/'} exact render={Accueil} />
-        <Route path={process.env.PUBLIC_URL + '/pays'} exact component={PaysManager} />
-        <Route path={process.env.PUBLIC_URL + '/pays/:id'} exact render={(props) => <UnPays {...props}/>} />
+        <Route path="/" exact render={Accueil} />
+        <Route path="/pays" exact component={PaysManager} />
+        <Route path="/pays/:id" exact render={(props) => <UnPays {...props}/>} />
         <Route render={() => <Erreur><Erreur404 /></Erreur>} />
         {/* <Route path="/admin" exact component={() => <h2>Page Admin</h2>} /> */}
       </Switch>
