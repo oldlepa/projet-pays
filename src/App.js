@@ -13,7 +13,7 @@ function App(props) {
   const { match } = props;
   console.log(props);
   return (
-    <BrowserRouter forceRefresh={true}>
+    <BrowserRouter>
       {/* <Link to="/">Accueil</Link>
       <Link to="/pays">Les pays</Link> 
       <Route path="/pays" component={NavBar} />
